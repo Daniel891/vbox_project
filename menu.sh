@@ -9,11 +9,11 @@ PS3="¿QUÉ QUIERES HACER?: ";
 select item in "${OPCIONES[@]}"
 do
 	case $REPLY in
-		1)	
+		1)	./crearmv.sh
 			;;
-		2)	
+		2)	./lsmv.sh
 			;;
-		3)	
+		3)	./crearsata.sh
 			;;
 		4)	
 			;;
