@@ -28,6 +28,9 @@ do
 		9)	echo "Saliendo..."
 			exit
 			;;
+		*)	echo "Opción no válida";
+			exit
+			;;
 	esac
 done
 
