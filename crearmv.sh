@@ -35,7 +35,11 @@ do
 done
 
 echo " ";
-	
-echo "nombre" $NOMBRE;
-echo "SO" $SO;
-echo "Memoria" $MEMORIA;
+echo "... Creando máquina virtual ...";
+
+VBoxManage createvm --name $NOMBRE --ostype $SO --register;
+sleep 2;
+VBoxManage modifyvm $NOMBRE --memory $MEMORIA
+
+echo " ";
+echo "Creada MV de tipo $SO llamada $NOMBRE, con $MEMORIA Mb de RAM";
