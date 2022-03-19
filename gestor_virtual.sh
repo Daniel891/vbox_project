@@ -9,9 +9,11 @@ PS3="¿QUÉ QUIERES HACER?: ";
 select item in "${OPCIONES[@]}"
 do
 	case $REPLY in
-		1)	./crearmv.sh
+		1)	./crearmv.sh;
+			break
 			;;
-		2)	./lsmv.sh
+		2)	vboxmanage list vms;
+			break
 			;;
 		3)	./crearsata.sh
 			;;
@@ -25,13 +27,10 @@ do
 			;;
 		8)
 			;;
-		9)	echo "Saliendo..."
-			exit
+		9)	echo "Saliendo...";
+			break
 			;;
-		*)	echo "Opción no válida";
-			exit
+		*)	echo "Opción no válida"
 			;;
 	esac
 done
-
-exit;
