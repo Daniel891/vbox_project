@@ -1,10 +1,10 @@
-#! /bin/bash -x
+#! /bin/bash
 
 
 #SCRIPT PARA CREAR UNA MV CON DIFERENTES OPCIONES PREESTABLECIDAS
 
 NOMBRE='';
-OS='';
+SO='';
 MEMORIA=1024;
 
 while [[ $NOMBRE == '' ]] ;
@@ -14,26 +14,14 @@ done
 
 PS3="Elige sistema operativo --> ";
 
-select item in "Debian_64" "Ubuntu_64" "Otro"
+select item in "Debian_64" "Ubuntu_64" "RedHat_64" "Otro_64"
 do
-	case "$REPLAY" in
-		1)	SO="Debian_64";
-			break
-			;;
-		2)	SO="Ubuntu_64";
-			break
-			;;
-		3)	while [[ $OS == '' ]] ;
-			do
-				read -p "Elige un Sistema Operativo --> " OS;
-			done;
-			break
-			;;
-	esac
+	case SO=$item;
+	break;
 done
 
 read -p "Memoria RAM en Mb (Por defecto serán 1024) --> " MEMORIA;
 
-echo "nombre" NOMBRE;
-echo "OS" OS;
-echo "Memoria" MEMORIA;
+echo "nombre" $NOMBRE;
+echo "SO" $SO;
+echo "Memoria" $MEMORIA;
