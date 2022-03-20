@@ -2,9 +2,12 @@
 
 #MENÚ DE LAS DIFERENTES OPCIONES PARA GESTIONAR MÁQUINAS VIRTUALES
 
-OPCIONES=('Crear MV' 'Listar MMVV' 'Mostrar info MV' 'Crear controladora SATA' 'Crear vdi' 'Acoplar vdi' 'Listar vdi' 'Salir');
-
+OPCIONES=('Crear MV' 'Eliminar MV' 'Mostrar info MV' 'Crear controladora SATA' 'Crear vdi' 'Acoplar vdi' 'Salir');
 PS3="¿QUÉ QUIERES HACER?: ";
+
+echo "Máquinas virtuales existentes:";
+vboxmanage list vms;
+echo " ";
 
 select item in "${OPCIONES[@]}"
 do
@@ -12,24 +15,22 @@ do
 		1)	./crearmv.sh;
 			break
 			;;
-		2)	vboxmanage list vms;
+		2)	./borrarmv.sh;
 			break
 			;;
-		#3)	unregistervm   <uuid|vmname> [--delete]
-		3)	./crearsata.sh;
+		3)	./infovm.sh;
 			break
 			;;
-		4)	
+		4)	./crearsata.sh;
+			break
 			;;
-		5)	
+		5)	./crearvdi.sh;
+			break
 			;;
-		6)
+		6)	./acoplarvdi.sh;
+			break
 			;;
-		7)
-			;;
-		8)
-			;;
-		9)	echo "Saliendo...";
+		7)	echo "Saliendo...";
 			break
 			;;
 		*)	echo "Opción no válida"
