@@ -14,6 +14,7 @@ done
 
 echo " ";
 echo "Elige Sistema Operativo";
+
 PS3="--> ";
 
 select item in "Debian_64" "Ubuntu_64" "RedHat_64" "Otro_64"

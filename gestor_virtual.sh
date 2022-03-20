@@ -2,7 +2,7 @@
 
 #MENÚ DE LAS DIFERENTES OPCIONES PARA GESTIONAR MÁQUINAS VIRTUALES
 
-OPCIONES=('Crear MV' 'Listar MMVV' 'Mostrar' 'info MV' 'Crear controladora SATA' 'Crear vdi' 'Acoplar vdi' 'Listar vdi' 'Salir');
+OPCIONES=('Crear MV' 'Listar MMVV' 'Mostrar info MV' 'Crear controladora SATA' 'Crear vdi' 'Acoplar vdi' 'Listar vdi' 'Salir');
 
 PS3="¿QUÉ QUIERES HACER?: ";
 
@@ -15,7 +15,9 @@ do
 		2)	vboxmanage list vms;
 			break
 			;;
-		3)	./crearsata.sh
+		#3)	unregistervm   <uuid|vmname> [--delete]
+		3)	./crearsata.sh;
+			break
 			;;
 		4)	
 			;;
